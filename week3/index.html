@@ -20,10 +20,10 @@
 
         .info-box {
             border: 2px solid black;
-            padding: 30px;
+            padding: 20px;
             text-align: center;
             max-width: 400px;
-            height: 700px;
+            height: 800px;
             width: 200%;
             backdrop-filter: blur(5px);
             background-color: rgba(255, 255, 255, 0.8);
@@ -65,11 +65,12 @@
 
 <body>
     <!-- Start Coding Here! -->
+
     <div class="info-box">
         <audio controls autoplay loop>
             <source src="bgm.mp3" type="audio/mp3">
-            Your browser does not support the audio element.
         </audio>
+
         <img src="jp.jpg" alt="janson" class="profile-image">
         <h2>Janson Pagharion</h2>
         <p>Currently enrolled in Asia Pacific College</p>
@@ -84,12 +85,17 @@
             <div> <button id="button" onclick="countClicks()">Count Clicks</button> </div>
             <button id="button" onclick="myFunction()">Try it</button>
             <p id="demo"></p>
+            <div> <button type="button" onclick='document.getElementById("demo").innerHTML = "Meow"'>Click Me!</button>
+
+            </div>
         </div>
     </div>
 
 
+
     <!-- java script stuff and other background stuff pi -->
     <script>
+
           function changeBackground() {
             document.body.style.backgroundImage = "url('wallpaper2.jpg')";
         }
