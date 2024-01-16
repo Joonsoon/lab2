@@ -2,26 +2,71 @@
 <html lang="en">
 <head>
 <style>
-        body {
-            background-image: url("wallpaper.jpg");
-            background-size: cover; 
-            background-position: center;
-            background-repeat: no-repeat; 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-    </style>
+    body {
+        background-image: url("wallpaper.jpg"); 
+        background-size: cover;
+        background-position: center; 
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200vh;
+        margin: 0;
+    }
 
+    .info-box {
+        border: 2px solid black;
+        padding: 20px;
+        text-align: center;
+        max-width: 400px;
+        height: auto; 
+        width: 70%; 
+        backdrop-filter: blur(5px);
+        background-color: rgba(255, 255, 255, 0.8);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
+    #back {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
 
-  <!-- mga pang backgrounds, text stuff -->
-  <title>JHPAGHARION2</title>
+    #box-content {
+        max-width: 80%; 
+    }
+
+    .interest-img {
+        max-width: 100%; 
+        height: 50%; 
+        margin-bottom: 10px; 
+        border: 2px solid black;
+
+    }
+</style>
+
+<title>JHPAGHARION2</title>
+</head>
 <body>
 
-    <button id="back" onclick="back()">Go back</button>
+    <div class="info-box">
+        <div id="box-content">
+            <button id="back" onclick="back()">Go back</button>
+            <h1>My Skills</h1>
+            <img src="guit.png" alt="guitar" class="interest-img">
+            <p>I play the Guitar</p>
+            <img src="uke.jpg" alt="uke" class="interest-img">
+            <p>I Play the ukelele</p>
+            <img src="lok.jpg" alt="art" class="interest-img">
+            <p>I sometimes make digital art </p>
+            <img src="code.jpg" alt="code" class="interest-img">
+            <p>I Code (Only with Schoolworks) </p>
+            
+        </div>
+    </div>
+
     <script>
         function back() {
             window.location.href = 'index.html';
