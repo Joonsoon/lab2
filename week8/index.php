@@ -32,6 +32,11 @@
         for ($i = 0; $i < $randomParagraphs; $i++) {
             echo "<p>This is a random paragraph #$i.</p>";
         }
+
+        echo "<h1>Min Max Function</h1>";
+        echo(min(0, 150, 30, 20, -8, 500) . "<br>");
+        echo(max(0, 150, 30, 20, -8, -200));
+
         ?>
     </div>
 
