@@ -58,6 +58,8 @@
             <p id="dateString"></p>
             <button onclick="promptUser()">Enter something</button>
             <p id="demo"></p>
+            <button onclick="revealPunchline()">Reveal Punchline</button>
+            <p id="punchline" style="display: none;"></p>
         </div>
     </div>
 
@@ -84,6 +86,10 @@
             }
         }
 
+        function revealPunchline() {
+            document.getElementById("punchline").style.display = "block";
+        }
+
         window.onload = function () {
             displayRandomNumber();
             stringifyDates();
@@ -95,7 +101,9 @@
             ["Onions", 30]
         ]);
 
-            document.getElementById("demo").innerHTML = Vegetables.get("Onions");
+        document.getElementById("demo").innerHTML = "What do you call a fish with no eyes?";
+
+        document.getElementById("punchline").innerHTML = "FSH!!";
     </script>
 </body>
 </html>
