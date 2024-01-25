@@ -57,6 +57,7 @@
             <p id="randomNumber"></p>
             <p id="dateString"></p>
             <button onclick="promptUser()">Enter something</button>
+            <p id="demo"></p>
         </div>
     </div>
 
@@ -87,6 +88,14 @@
             displayRandomNumber();
             stringifyDates();
         };
+
+        const Vegetables = new Map([
+            ["Carrots", 100],
+            ["Eggplant", 40],
+            ["Onions", 30]
+        ]);
+
+            document.getElementById("demo").innerHTML = Vegetables.get("Onions");
     </script>
 </body>
 </html>
