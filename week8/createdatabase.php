@@ -11,16 +11,20 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT id, name, email, website, comment, gender FROM jhpagharion2_myguests";
-$result = $conn->query($sql);
+// sql to create table
+$sql = "CREATE TABLE jhpagharion2_myguests (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+firstname VARCHAR(30) NOT NULL,
+lastname VARCHAR(30) NOT NULL,
+email VARCHAR(50),
+reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+)";
 
-if ($result->num_rows > 0) {
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-    echo "id: " . $row["id"]. " - Name: " . $row["name"]. " - email " . $row["email"]. " - Website " . $row["website"]. " - Comment: " . $row["comment"]. " - Gender: " . $row["gender"]. "<br>";
-  }
+if ($conn->query($sql) === TRUE) {
+  echo "Table MyGuests created successfully";
 } else {
-  echo "0 results";
+  echo "Error creating table: " . $conn->error;
 }
+
 $conn->close();
 ?>
