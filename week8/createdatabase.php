@@ -1,31 +1,26 @@
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "mydb";
+    $username = "webprogmi222_sf221";
+    $password = "xE*Y2nleNVvZm[!!";
+    $dbname = "webprogmi222_sf221";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password);
+$conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-// Create database
-$sql = "CREATE DATABASE myDB";
-if ($conn->query($sql) === TRUE) {
-  echo "Database created successfully";
+$sql = "SELECT id, name, email, website, comment, gender FROM jhpagharion2_myguests";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    echo "id: " . $row["id"]. " - Name: " . $row["name"]. " - email " . $row["email"]. " - Website " . $row["website"]. " - Comment: " . $row["comment"]. " - Gender: " . $row["gender"]. "<br>";
+  }
 } else {
-  echo "Error creating database: " . $conn->error;
+  echo "0 results";
 }
-
-CREATE TABLE MyGuests (
-id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-firstname VARCHAR(30) NOT NULL,
-lastname VARCHAR(30) NOT NULL,
-email VARCHAR(50),
-reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-)
-
 $conn->close();
 ?>
